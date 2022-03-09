@@ -1,13 +1,15 @@
 const getAngkaTerbesarKedua = (dataNumbers) => {
-  if (typeof dataNumbers == 'number') {
-    var nomor = [dataNumbers];
-    var max = Math.max.apply(null, nomor);
-    let maxi = nomor.indexOf(max);
-    nomor[maxi] = -Infinity;
-    var secondMax = Math.max.apply(null, nomor);
-    nomor[maxi] = max;
-    return secondMax;
+  if (typeof dataNumbers == 'object') {
+    angkaTerbesar = Math.max(...dataNumbers);
+    i = dataNumbers.indexOf(angkaTerbesar);
+    dataNumbers.splice(i, 1);
+    angkaTerbesarKedua = Math.max(...dataNumbers);
+    return angkaTerbesarKedua;
+  } else if (dataNumbers == undefined) {
+    return 'ERROR : Bro where is the parameter?';
+  } else if (typeof dataNumbers !== 'object') {
+    return 'ERROR : PARAMETER IS NOT AN ARRAY';
   }
 };
 
-console.log(getAngkaTerbesarKedua(1, 2, 3, 4, 5, 6));
+console.log(getAngkaTerbesarKedua([1, 2, 3, 4, 5]));

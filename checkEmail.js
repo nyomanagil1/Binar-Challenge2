@@ -3,6 +3,8 @@ const ValidateEmail = (email) => {
   if (typeof email == 'string') {
     if (email.match(emailValid)) {
       return 'VALID';
+    } else if (email.indexOf('@') == -1) {
+      return 'ERROR : NO @ IN THE EMAIL';
     } else {
       return 'INVALID';
     }

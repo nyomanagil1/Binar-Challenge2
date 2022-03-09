@@ -3,9 +3,9 @@ const isValidPassword = (givenPassword) => {
   if (String(givenPassword).match(passw)) {
     return true;
   } else if (givenPassword == undefined) {
-    return 'ERROR : Password tidak di isi';
+    return 'ERROR : Bro where is the parameter?';
   } else if (typeof givenPassword == 'number') {
-    return 'ERROR : Tipe datanya number, bukan boolean';
+    return 'ERROR : Invalid Parameter';
   } else {
     return false;
   }
